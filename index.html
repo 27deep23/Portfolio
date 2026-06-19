@@ -1,303 +1,370 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        /* Basic CSS Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<style>
+
+body{
+
+overflow-x: hidden;
+
+}
+
+header{
+
+ display: flex;
+
+align-items: center;
+
+background-color: #1c1e22;
+justify-content: space-between;
+
+}
+
+ #navbar{
+ background-color: #1c1e22;
+ display: flex;
+justify-content: flex-end;
+
+}
+
+a{
+
+ color: white;
+
+padding: 14px 20px;
+
+ text-decoration: none;
+
+text-align: center;
+
         }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #080a0c;
+
+        #home{
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px;
+
+            background-color: #929aad;
+
+            color:#f8f9f1;
+
+        }
+
+        #about{
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px;
+
+            background-color: #878e9d;
+
+            color:#f8f9f1;
+
+        }
+
+        #portfolio{
+
+            padding: 20px;
+
+            background-color: #929aad;
+
+            color:#f8f9f1;
+
+            display: flex;
+
+        }
+
+        #prof{
+
+            width: 200px;
+
+            height: 200px;
+
+            border-radius: 5%;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            padding: 5px;
+
+        }
+
+        #proc{
+
+            width: 200px;
+
+            height: 200px;
+
+            border-radius: 5%;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            animation-name: float;
+
+            animation-duration: 3s;
+
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes float{
+
+            0%{
+
+                transform: translateY(0);
+
+            }
+
+            50%{
+
+                transform: translateY(-20px);
+
+            }
+
+            100%{
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        #details{
+
+            border: 1px solid #f8f9f1;
+
+            padding: 5px;
+
+            border-radius: 5%;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+        #skills {
+            background-color: #878e9d;
+            padding: 60px 40px;
             color: #f8f9f1;
         }
-
-        /* Standard Top Navigation Bar */
-        header {
-            background-color: #11161b;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #10b981;
-        }
-
-        header p {
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        #navbar a {
-            color: #718096;
-            padding: 10px 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        #navbar a:hover {
-            color: #10b981;
-        }
-
-        /* Section Layouts using Basic Flexbox */
-        #home {
-            background-color: #022c22;
-            padding: 50px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #home h2 {
-            color: #10b981;
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        #home p {
-            max-width: 600px;
-            line-height: 1.5;
-        }
-
-        #about {
-            background-color: #0f172a;
-            padding: 50px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #details {
-            background-color: #11161b;
-            padding: 20px;
-            border: 1px solid #10b981;
-            border-radius: 5px;
-            width: 70%;
-        }
-
-        #details h2 {
-            color: #10b981;
-            margin-bottom: 10px;
-        }
-
-        #details p {
-            line-height: 1.6;
-        }
-
-        /* Profile Images */
-        #prof, #proc {
-            width: 180px;
-            height: 180px;
-            border-radius: 10px;
-            border: 3px solid #10b981;
-        }
-
-        #proc {
-            animation: float 3s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Portfolio Cards Layout */
-        #portfolio {
-            background-color: #022c22;
-            padding: 50px 30px;
-        }
-
-        #portfolio h2 {
-            color: #10b981;
-            margin-bottom: 20px;
-        }
-
-        .portfolio-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        #portfolio section {
-            background-color: #11161b;
-            padding: 20px;
-            border-radius: 5px;
-            width: 32%;
-            border: 1px solid #718096;
-        }
-
-        #portfolio h3 {
-            color: #10b981;
-            margin-bottom: 8px;
-        }
-
-        #portfolio p {
-            color: #e2e8f0;
-            font-size: 0.9rem;
-        }
-
-        /* Simple Skills Block Layout */
-        #skills {
-            background-color: #0f172a;
-            padding: 50px 30px;
-        }
-
         #skills h2 {
-            color: #10b981;
+            grid-column: 1 / -1;
             margin-bottom: 20px;
         }
-
         .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-
         .ski {
-            background-color: #11161b;
-            border: 1px solid #10b981;
-            padding: 15px 25px;
-            border-radius: 5px;
-            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1%;
+            margin: 1%;
+            border-radius: 8px;
             text-align: center;
-            min-width: 120px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: #f8f9f1;
+            font-weight: bold;
+            height: 80px;
+            transition: all 0.3s ease;
         }
-
         .ski:hover {
-            background-color: #10b981;
-            color: #080a0c;
+            background-color: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
         }
 
-        /* Contact & Footer Elements */
-        #contact {
-            background-color: #022c22;
-            padding: 50px 30px;
-            text-align: center;
+#portfolio {
+            padding: 60px 40px;
+            background-color: #929aad;
+            color: #f8f9f1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+ #portfolio section {
+            background-color: #696a6c;
+            color: #f8f9f1;
+            padding: 20px;
+            flex: 1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        #contact h2 {
-            color: #10b981;
-            margin-bottom: 15px;
-        }
+.ski:hover{
 
-        #contact a {
-            display: inline-block;
-            background-color: #10b981;
-            color: #080a0c;
-            text-decoration: none;
-            padding: 10px 25px;
-            font-weight: bold;
-            border-radius: 4px;
-        }
+background-color: rgba(0, 0, 0, 0.4);
 
-        #contact a:hover {
-            background-color: #f8f9f1;
-        }
+box-shadow: 0 9px 8px rgba(60, 123, 165, 0.2);
 
-        footer {
-            background-color: #11161b;
-            color: #718096;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-        }
+}
 
-        /* Standard Mobile Responsive Media Query */
-        @media screen and (max-width: 768px) {
-            header, #home, #about, .portfolio-container {
+ @media screen and (max-width: 768px) {
+            header {
                 flex-direction: column;
-                text-align: center;
+                gap: 10px;
             }
             #navbar {
-                margin-top: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
             }
-            #details, #portfolio section {
-                width: 100%;
-                margin-bottom: 15px;
+            #home, #about {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 20px;
             }
-            .skills-grid {
+            #portfolio, #skills, #contact {
+                padding: 40px 20px;
+            }
+            .portfolio-container {
                 justify-content: center;
             }
         }
+#contact{
+background-color: #929aad;
+padding: 20px;
+color:#f8f9f1;
+text-align: center;
+        }
+        #contact a:hover {
+            background-color: #696a6c;
+            color: #f8f9f1;
+        }
+
     </style>
+
 </head>
-<body>
-    <header>
-        <p>Portfolio</p>
-        <div id="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="Resume.pdf" target="_blank">Resume</a>
-        </div>
-    </header>
+
+<body><header >
+
+    <p style="text-align: left; color:#f8f9f1">Portfolio</p>
+
+    <div id="navbar">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#portfolio">Portfolio</a>
+
+ <a href="#skills">Skills</a>
+
+ <a href="#contact">Contact</a>
+ 
+<a href="Resume.pdf" target="_blank">Resume</a>
+
+    </div></header>
 
     <div id="home">
+
         <div>
+
             <h2>I'm Padmaraju</h2>
-            <p>I'm a Full-Stack Developer and AI Enthusiast passionate about building smart, responsive, and impactful web applications. From crafting intuitive user interfaces to developing robust back-end systems, I love turning complex problems into clean, efficient code.</p>
+
+            <h3>I'm a Full-Stack Developer and AI Enthusiast passionate about building smart, responsive, and impactful web applications. From crafting intuitive user interfaces to developing robust back-end systems, I love turning complex problems into clean, efficient code.</h3>
+
         </div>
+
         <div><img src="proc.jpeg" alt="Profile Image" id="proc"></div>
+
     </div>
 
     <div id="about">
-        <section id="pic">
-            <img src="proc.jpeg" alt="Profile Image" id="prof">
-        </section>
-        <section id="details">
-            <h2>About Me</h2>
-            <p>I am a software engineering student with a deep interest in full-stack development and artificial intelligence. My technical toolkit includes Python, JavaScript, and the MERN stack (MongoDB, Express, React, Node.js), allowing me to build applications from the ground up.
 
-I thrive on creating seamless user experiences combined with powerful back-end logic. Whether I’m designing interactive tools like financial calculators or training machine learning models, I approach every project with an eye for detail, scalability, and clean architecture. I'm always looking for opportunities to collaborate on innovative projects and expand my skills.</p>
+        <section id="pic">
+
+            <img src="proc.jpeg" alt="Profile Image" id="prof">
+
         </section>
+
+        <section id="details">
+
+            <h2>About Me</h2>
+
+            <h4>I am a software engineering student with a deep interest in full-stack development and artificial intelligence. My technical toolkit includes Python, JavaScript, and the MERN stack (MongoDB, Express, React, Node.js), allowing me to build applications from the ground up. I thrive on creating seamless user experiences combined with powerful back-end logic. Whether I’m designing interactive tools like financial calculators or training machine learning models, I approach every project with an eye for detail, scalability, and clean architecture. I'm always looking for opportunities to collaborate on innovative projects and expand my skills.</h4>
+
+        </section>
+
     </div>
 
     <div id="portfolio">
+
         <h2>Portfolio</h2>
-        <div class="portfolio-container">
-            <section>
-                <h3>FD calculator</h3>
-                <p>A simple fixed deposit calculator built with HTML, CSS, and JavaScript.</p>
-            </section>
-            <section>
-                <h3>Clock</h3>
-                <p>A Simple Clock using Html,Css,Js</p>
-            </section>
-            <section>
-                <h3>Portfolio</h3>
-                <p>A responsive portfolio website showcasing my projects and skills.</p>
-            </section>
-        </div>
+
+        <section>
+
+<h3>FD calculator</h3>
+
+ <p>A simple fixed deposit calculator built with HTML, CSS, and JavaScript.</p>
+
+ </section>
+
+<section>
+
+ <h3>Portfolio</h3>
+
+ <p>A responsive portfolio website showcasing my projects and skills.
+
+
+
+            </p>
+
+        </section>
+
     </div>
 
     <div id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="ski">Python</div>
-            <div class="ski">HTML/CSS</div>
-            <div class="ski">JavaScript</div>
-            <div class="ski">React</div>
-            <div class="ski">Node.js</div>
-            <div class="ski">MERN Stack</div>
-        </div>
+
+        <section>
+
+            <h2><u>Skills</u></h2>
+
+        </section>
+
+        <section class="ski">Python</section>
+
+        <section class="ski">HTML/CSS</section>
+
+        <section class="ski">JavaScript</section>
+
+        <section class="ski">React</section>
+
+        <section class="ski">Node.js</section>
+
+        <section class="ski">MERN Stack</section>
+
     </div>
 
     <div id="contact">
+
         <h2>Contact</h2>
-        <a href="mailto:j2323ai@gmail.com">Email Me</a>
+
+        <a href="mailto:j2323ai@gmail.com">Email</a>
+
     </div>
 
-    <footer>
-        &copy; 2026 Padmaraju. All rights reserved.
-    </footer> 
+    <footer style="background-color: #1c1e22; color:#f8f9f1; text-align: center; padding: 10px;">
+
+        &copy; 2026 Padmaraju. All rights reserved.</footer> 
+
 </body>
+
 </html>
